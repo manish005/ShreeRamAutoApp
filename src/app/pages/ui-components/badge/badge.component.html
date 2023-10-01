@@ -1,0 +1,113 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Replace Item</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <mat-card class="b-1 shadow-none">
+      <mat-card-content>
+        <form class="example-form">
+          
+          <div class="grid2col">
+            <mat-form-field class="example-full-width">
+              <mat-label>Current Date</mat-label>
+              <input matInput [matDatepicker]="picker1">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Model</mat-label>
+          <input type="text"
+                 placeholder="Pick one"
+                 aria-label="Model"
+                 matInput
+                 [formControl]="OldmodelForm"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let Oldmodelname of OldfilteredOptions | async" [value]="Oldmodelname">
+              {{Oldmodelname}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+          </div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Old Sr.No</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>Client name</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+            </tr>
+           </table>
+           <div class="grid2col" cellspacing="0">
+            <mat-form-field class="example-full-width">
+              <mat-label>Mobile No</mat-label>
+              <span matPrefix>+91 &nbsp;</span>
+              <input type="tel" matInput placeholder="800-555-1234">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Ticket No</mat-label>
+              <input matInput>
+            </mat-form-field>
+    </div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Date of Sold</mat-label>
+      <input matInput [matDatepicker]="picker2">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+            
+            <mat-form-field class="example-full-width">
+              <mat-label>Replacement Bat Sr.No</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <div class="grid2col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Replacement Date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Replace Model</mat-label>
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Replace Model"
+                   matInput
+                   [formControl]="NewmodelForm"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let Newmodelname of NewfilteredOptions | async" [value]="Newmodelname">
+                {{Newmodelname}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+            </div>
+            <div class="grid2col">
+              <mat-form-field>
+                <mat-label>Old Battery Received</mat-label>
+                <mat-select [disabled]="disableSelect.value">
+                  <mat-option value="Yes">Yes</mat-option>
+                  <mat-option value="No">No</mat-option>
+                </mat-select>
+              </mat-form-field> 
+          <mat-form-field>
+            <mat-label>New Battery Delivered</mat-label>
+            <mat-select [disabled]="disableSelect.value">
+              <mat-option value="Yes">Yes</mat-option>
+              <mat-option value="No">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary">Submit</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>
