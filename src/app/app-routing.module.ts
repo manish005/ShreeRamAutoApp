@@ -6,6 +6,24 @@ import { FullComponent } from './layouts/full/full.component';
 const routes: Routes = [
   {
     path: '',
+    component: BlankComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/authentication/login',
+        pathMatch: 'full',
+      },
+      {
+        path: 'authentication',
+        loadChildren: () =>
+          import('./pages/authentication/authentication.module').then(
+            (m) => m.AuthenticationModule
+          ),
+      },
+    ],
+  },
+  {
+    path: '',
     component: FullComponent,
     children: [
       {
@@ -19,7 +37,7 @@ const routes: Routes = [
           import('./pages/pages.module').then((m) => m.PagesModule),
       },
       {
-        path: 'ui-components',
+        path: 'Replacement',
         loadChildren: () =>
           import('./pages/ui-components/ui-components.module').then(
             (m) => m.UicomponentsModule
@@ -31,20 +49,7 @@ const routes: Routes = [
           import('./pages/extra/extra.module').then((m) => m.ExtraModule),
       },
     ],
-  },
-  {
-    path: '',
-    component: BlankComponent,
-    children: [
-      {
-        path: 'authentication',
-        loadChildren: () =>
-          import('./pages/authentication/authentication.module').then(
-            (m) => m.AuthenticationModule
-          ),
-      },
-    ],
-  },
+  }
 ];
 
 @NgModule({

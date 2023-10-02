@@ -12,15 +12,15 @@ export const UiComponentsRoutes: Routes = [
     path: '',
     children: [
       {
-        path: 'badge',
+        path: 'form',
         component: AppBadgeComponent,
       },
       {
-        path: 'chips',
+        path: 'formdata',
         component: AppChipsComponent,
       },
       {
-        path: 'lists',
+        path: 'exportdata',
         component: AppListsComponent,
       },
       {

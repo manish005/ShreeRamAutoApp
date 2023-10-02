@@ -15,17 +15,17 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Replace Form',
     iconName: 'rosette',
-    route: '/ui-components/badge',
+    route: '/Replacement/form',
   },
   {
     displayName: 'Replace Data',
     iconName: 'poker-chip',
-    route: '/ui-components/chips',
+    route: '/Replacement/formdata',
   },
   {
     displayName: 'Export Replace Data',
     iconName: 'list',
-    route: '/ui-components/lists',
+    route: '/Replacement/exportdata',
   },
   // {
   //   displayName: 'Menu',

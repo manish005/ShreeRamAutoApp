@@ -9,14 +9,37 @@
   <!-- Notification Dropdown -->
   <!-- --------------------------------------------------------------- -->
 
-  <button mat-icon-button aria-label="Notifications">
+  <button mat-icon-button aria-label="Notifications" [matMenuTriggerFor]="NotificationList">
     <i-tabler
       class="d-flex"
       name="bell"
-      matBadge="1"
+      matBadge="4"
       matBadgeColor="primary"
     ></i-tabler>
   </button>
+  
+    <mat-menu  #NotificationList="matMenu" class="topbar-dd cardWithShadow">
+      <button mat-menu-item>
+        <mat-list-item>
+         This is the title
+        </mat-list-item>
+      </button>
+      <button mat-menu-item>
+        <mat-list-item>
+         Also the title
+        </mat-list-item>
+      </button>
+      <button mat-menu-item>
+        <mat-list-item>
+        This is the title
+        </mat-list-item>
+      </button>
+      <button mat-menu-item>
+        <mat-list-item>
+          Also the title
+        </mat-list-item>
+      </button>
+</mat-menu>
 
   <span class="flex-1-auto"></span>
 
@@ -40,7 +63,7 @@
     <img
       src="/assets/images/profile/user-1.jpg"
       class="rounded-circle object-cover"
-      width="35"
+      width="55"
     />
   </button>
   <mat-menu #profilemenu="matMenu" class="topbar-dd cardWithShadow">
